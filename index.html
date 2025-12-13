@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Software Developer Resume</title>
+    <style>
+        /*
+        *************************************************
+        * CSS STYLES ARE INCLUDED HERE FOR SIMPLICITY *
+        *************************************************
+        */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #007bff;
+            margin: 0 0 5px 0;
+            font-size: 2.5em;
+        }
+
+        header p.contact-info {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        header p.contact-info a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        main section {
+            margin-bottom: 25px;
+        }
+
+        main h2 {
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* Experience and Education Styling */
+        .item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+        }
+
+        .item h3 {
+            margin: 0 0 5px 0;
+            color: #222;
+            font-size: 1.2em;
+        }
+
+        .item p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        .item .dates {
+            float: right;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Skills Styling */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li {
+            background-color: #e0f0ff;
+            color: #007bff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        /* Project Styling */
+        .project-item h4 {
+            margin: 0 0 5px 0;
+            color: #007bff;
+        }
+
+        .project-item p.tech-stack {
+            font-size: 0.85em;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        /* Print Styles (Optional but recommended) */
+        @media print {
+            body {
+                background-color: #fff;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+            }
+            header {
+                border-bottom: 1px solid #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container"> <header>
+            <h1>[Your Name]</h1>
+            <p class="contact-info">
+                [Your Phone] | <a href="mailto:youremail@example.com">youremail@example.com</a> |
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+            </p>
+        </header>
+
+        <section id="summary">
+            <h2>Profile Summary</h2>
+            <p>
+                Highly motivated [Job Title, e.g., Full-Stack Developer] with X years of experience in designing,
+                developing, and deploying scalable web applications. Proven ability to learn new technologies quickly
+                and contribute to team success in fast-paced environments. Specialized in [Key Technology, e.g., React and Node.js].
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>JavaScript (ES6+)</li>
+                <li>React/Vue/Angular</li>
+                <li>Node.js / Express</li>
+                <li>Python / Django</li>
+                <li>SQL (PostgreSQL)</li>
+                <li>NoSQL (MongoDB)</li>
+                <li>HTML5 / CSS3</li>
+                <li>Git / GitHub</li>
+                <li>AWS / Docker</li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+
+            <div class="item">
+                <span class="dates">Jan 2022 – Present</span>
+                <h3>[Senior Developer] at [Tech Company Name]</h3>
+                <p>City, State</p>
+                <ul>
+                    <li>Led the migration of legacy services to a modern serverless architecture, reducing operational costs by 20%.</li>
+                    <li>Developed and maintained high-traffic RESTful APIs using Node.js and TypeScript, handling over 1 million requests daily.</li>
+                    <li>Mentored junior developers on best practices for code quality, testing (Jest/Mocha), and deployment pipelines.</li>
+                </ul>
+            </div>
+
+            <div class="item">
+                <span class="dates">Jun 2019 – Dec 2021</span>
+                <h3>[Junior Developer] at [Startup Name]</h3>
+                <p>City, State</p>
+                <ul>
+                    <li>Implemented new features across the marketing website using React and styled components, resulting in a 15% increase in lead generation.</li>
+                    <li>Optimized database queries in PostgreSQL, improving key transaction speeds by 40%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+            <div class="project-item">
+                <h4>Captivating PDF Viewer (GitHub Pages)</h4>
+                <p class="tech-stack">**Tech Stack:** HTML, CSS, JavaScript, PDF.js, GitHub Pages</p>
+                <p>A mobile-friendly, client-side PDF viewer featuring automatic page bookmarking via LocalStorage and touch-optimized swipe navigation. (View it live on your GitHub Pages site!)</p>
+            </div>
+            
+            <div class="project-item">
+                <h4>[E-commerce Platform]</h4>
+                <p class="tech-stack">**Tech Stack:** React, Redux, Node.js, MongoDB</p>
+                <p>Full-stack e-commerce site clone featuring user authentication, payment processing (Stripe integration), and an admin dashboard for inventory management.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="item">
+                <span class="dates">2015 – 2019</span>
+                <h3>B.Tech in Computer Science</h3>
+                <p>[University Name], [City, State]</p>
+                <p>Graduated with Honors.</p>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
