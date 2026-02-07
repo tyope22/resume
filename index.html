@@ -31,7 +31,13 @@
             justify-content: center;
             align-items: center;
         }
-
+        position: relative; /* This keeps the 'No' button trapped inside the box */
+        min-height: 450px;  /* Gives the button enough room to jump around */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
         .owl-icon {
             font-size: 60px;
             margin-bottom: 10px;
@@ -66,11 +72,10 @@
             border-radius: 20px;
             cursor: pointer;
             position: absolute; /* Moves relative to .container */
-            transition: all 0.1s ease; /* Smooth jump */
+            transition: all 0.15s ease; /* Smooth jump */
             z-index: 2;
-        }
-
-        .footer-text {
+            
+            .footer-text {
             position: absolute;
             bottom: 20px;
             font-size: 13px;
@@ -85,48 +90,47 @@
         <h1>Hey you! Will you be my friend?</h1>
 
         <button id="yesBtn" onclick="celebrate()">Yes</button>
-        
-        <button id="noBtn" style="top: 275px;">No</button>
+        <button id="noBtn" style="top: 300px;">No</button>
 
         <p class="footer-text">"No" seems a bit shy 😈</p>
     </div>
+<script>
+    const noBtn = document.getElementById('noBtn');
+    const container = document.getElementById('mainContainer'); // Make sure your container has id="mainContainer"
 
-    <script>
-        const noBtn = document.getElementById('noBtn');
-        const container = document.getElementById('mainContainer');
+// 1. Set your phone number here (International format, no +)
+    const MY_PHONE = "917859043592"; 
 
-        const moveButton = () => {
-            // Get dimensions of the white container
-            const containerWidth = container.offsetWidth;
-            const containerHeight = container.offsetHeight;
-            
-            // Get dimensions of the button itself
-            const btnWidth = noBtn.offsetWidth;
-            const btnHeight = noBtn.offsetHeight;
+    const moveButton = () => {
+    // This calculates the box limits
+    const containerWidth = container.offsetWidth;
+    const containerHeight = container.offsetHeight;
 
-            // Calculate new random position strictly INSIDE the white box
-            // We subtract button size so it doesn't bleed over the edge
-            const newX = Math.floor(Math.random() * (containerWidth - btnWidth));
-            const newY = Math.floor(Math.random() * (containerHeight - btnHeight));
+    // Randomly pick a spot strictly inside the white container
+    const newX = Math.floor(Math.random() * (containerWidth - noBtn.offsetWidth));
+    const newY = Math.floor(Math.random() * (containerHeight - noBtn.offsetHeight));
 
-            noBtn.style.left = `${newX}px`;
-            noBtn.style.top = `${newY}px`;
-        };
+    noBtn.style.left = `${newX}px`;
+    noBtn.style.top = `${newY}px`;
+};
 
-        // Trigger move on hover/touch
-        noBtn.addEventListener('mouseover', moveButton);
-        noBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault(); // Prevents "phantom clicks" on mobile
-            moveButton();
-        });
+// Moves on hover and on mobile touch
+    noBtn.addEventListener('mouseover', moveButton);
+    noBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault(); 
+    moveButton();
+});
 
-        function celebrate() {
-            container.innerHTML = `
-                <div class="owl-icon">💖</div>
-                <h1 style="color: #E91E63;">Yay! See you soon!</h1>
-                <p>Prepare for the best party.</p>
-            `;
-        }
+    function celebrate() {
+    // Change screen text
+    container.innerHTML = `<h1 style="color: #E91E63;">Yay! Messaging you now... ❤️</h1>`;
+
+    // Redirect to WhatsApp
+    const message = encodeURIComponent("Yes! I will be your valentine! ❤️");
+    setTimeout(() => {
+        window.location.href = `https://wa.me/${MY_PHONE}?text=${message}`;
+    }, 1000);
+}
     </script>
 </body>
 </html>
