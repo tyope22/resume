@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Friend?</title>
+    <style>
+        body {
+            background-color: #FCE4EC; /* Light pink background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 400px;
+            position: relative;
+        }
+
+        h1 {
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            height: 50px;
+        }
+
+        #yesBtn {
+            background-color: #E91E63; /* Pinkish-red */
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #noBtn {
+            background-color: #EEEEEE;
+            color: #212121;
+            border: none;
+            padding: 10px 25px;
+            font-size: 18px;
+            border-radius: 20px;
+            position: absolute; /* Needed for jumping around */
+            cursor: pointer;
+        }
+
+        .footer-text {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div style="font-size: 50px;">🦉❤️</div> 
+        
+        <h1>Hey you! will you be my valentine?</h1>
+
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+
+        <p class="footer-text">"No" seems a bit shy 😈</p>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+
+        // Function to move the "No" button
+        const moveButton = () => {
+            // Calculate random positions within the viewport
+            // Subtracting button dimensions to keep it on screen
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        };
+
+        // Triggers when the mouse hovers over it
+        noBtn.addEventListener('mouseover', moveButton);
+        
+        // Triggers for touch screen users
+        noBtn.addEventListener('touchstart', moveButton);
+
+        function celebrate() {
+            alert("Yay! Best decision ever! ❤️");
+        }
+    </script>
+</body>
+</html>
